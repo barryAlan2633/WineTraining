@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="@color/white">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="25dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="100"
+            android:padding="8dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/action_button_save_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_check_circle_black_24dp"
+                app:backgroundTint="@color/black"
+                app:borderWidth="1dp"
+                app:fabSize="mini" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/action_button_cancel_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_cancel_black_24dp"
+                app:backgroundTint="@color/black"
+                app:borderWidth="1dp"
+                app:fabSize="mini" />
+
+            <EditText
+                android:id="@+id/tv_type_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/typeText"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/typeText"
+                android:hint="@string/QuestionList_et_name_category_glass_or_bottle"
+                android:importantForAutofill="no"
+                android:inputType="textAutoComplete" />
+
+            <EditText
+                android:id="@+id/tv_question_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/questionText"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/questionText"
+                android:hint="@string/QuestionList_et_example_question"
+                android:inputType="textMultiLine|textAutoComplete"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/questionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_type_edit"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@+id/typeText"
+                android:text="@string/QuestionList_tv_question"
+                android:textColor="@android:color/black" />
+
+
+            <TextView
+                android:id="@+id/typeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/QuestionList_tv_type"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_question"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/list_item_question"
+        android:clickable="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:focusable="true" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_button_new_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="32dp"
+        android:backgroundTint="@color/white"
+        app:backgroundTint="@color/black"
+        app:borderWidth="1dp"
+        app:srcCompat="@drawable/ic_add_black_24dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_button_prePopulateQuestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@color/white"
+        app:fabSize="mini"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Wine Training</string>
+    <string name="main_btn_high_scores">High Scores</string>
+    <string name="main_btn_wine_list">Wine List</string>
+    <string name="main_btn_question_list">Question List</string>
+    <string name="main_btn_play">Play</string>
+
+    <string name="HighScores_tv_high_scores">High Scores</string>
+    <string name="HighScores_tv_survivor_mode">Survivor Mode</string>
+    <string name="HighScores_tv_name">Name</string>
+    <string name="HighScores_tv_score">Score</string>
+    <string name="HighScores_tv_1st">1st</string>
+    <string name="HighScores_tv_2nd">2nd</string>
+    <string name="HighScores_tv_3rd">3rd</string>
+
+    <string name="WineList_et_example_name">Example name</string>
+    <string name="WineList_et_example_category">Example Category</string>
+    <string name="WineList_et_glass">Glass</string>
+    <string name="WineList_et_bottle">Bottle</string>
+    <string name="WineList_et_price">Price:</string>
+    <string name="WineList_et_category">Category:</string>
+    <string name="WineList_tv_slash" translatable="false">/</string>
+    <string name="WineList_tv_name">Name:</string>
+
+    <string name="Play_tv_what_do_you_want_to_study">What do you want to study?</string>
+    <string name="Play_btn_names">Names</string>
+    <string name="Play_btn_categories">Categories</string>
+    <string name="Play_btn_prices">Prices</string>
+    <string name="Play_btn_all">All</string>
+    <string name="Play_btn_all_menu">Survivor Mode</string>
+    <string name="Play_tv_how_many_questions">How many questions?</string>
+    <string name="Play_tv_question">Question</string>
+    <string name="Play_tv_score">Score:</string>
+    <string name="Play_tv_mode">Mode:</string>
+    <string name="Play_tv_lives_left">Lives Left:</string>
+
+    <string name="QuestionList_et_name_category_glass_or_bottle">name, category, glass or bottle</string>
+    <string name="QuestionList_et_example_question">Example Question</string>
+    <string name="QuestionList_tv_question">Question:</string>
+    <string name="QuestionList_tv_type">Type:</string>
+
+    <string name="DialogAreYouSure_tv_are_you_sure">Are you sure?</string>
+    <string name="DialogAreYouSure_btn_cancel">Cancel</string>
+    <string name="DialogAreYouSure_btn_yes">Yes</string>
+
+    <string name="DialogGameOver_tv_your_score_is">Your Score is:</string>
+    <string name="DialogGameOver_et_your_name_here">Your Name Here</string>
+    <string name="DialogGameOver_btn_retry">Retry</string>
+    <string name="DialogGameOver_btn_home">Home</string>
+
+    <string name="ListItemQuestion_tv_type">Type:</string>
+    <string name="ListItemQuestion_tv_question">Question:</string>
+    <string name="ListItemWine_tv_name">Name:</string>
+    <string name="ListItemWine_tv_category">Category:</string>
+    <string name="ListItemWine_tv_price">Price:</string>
+    <string name="ListItemWine_tv_slash" translatable="false">/</string>
+
+    <string name="MainActivity_tv_closing_app">"Are you sure you want to close the app?"</string>
+
+    <string name="PlayActivity_toast_you_need_to_write_your_name">You need to write your name to continue</string>
+    <string name="PlayActivity_toast_you_are_all_right">You\'re all right</string>
+    <string name="PlayActivity_toast_play_some_more">Play some more</string>
+    <string name="PlayActivity_tv_ending_game">Are you sure you want to quit the current game?</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

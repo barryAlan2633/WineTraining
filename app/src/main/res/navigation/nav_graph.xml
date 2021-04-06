@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainMenu">
+
+    <fragment
+        android:id="@+id/mainMenu"
+        android:name="com.barryalan.winetraining.shared.MainMenu"
+        android:label="MainMenu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenu_to_highScores"
+            app:destination="@id/highScores" />
+        <action
+            android:id="@+id/action_mainMenu_to_play"
+            app:destination="@id/play" />
+        <action
+            android:id="@+id/action_mainMenu_to_wineList"
+            app:destination="@id/wineList" />
+        <action
+            android:id="@+id/action_mainMenu_to_questionList"
+            app:destination="@id/questionList" />
+    </fragment>
+    <fragment
+        android:id="@+id/highScores"
+        android:name="com.barryalan.winetraining.highscores.HighScores"
+        android:label="fragment_high_scores"
+        tools:layout="@layout/fragment_high_scores" />
+    <fragment
+        android:id="@+id/play"
+        android:name="com.barryalan.winetraining.play.Play"
+        android:label="fragment_play"
+        tools:layout="@layout/fragment_play" >
+        <action
+            android:id="@+id/action_play_to_mainMenu"
+            app:destination="@id/mainMenu" />
+        <action
+            android:id="@+id/action_play_self"
+            app:destination="@id/play" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionList"
+        android:name="com.barryalan.winetraining.questionList.QuestionList"
+        android:label="fragment_question_list"
+        tools:layout="@layout/fragment_question_list" />
+    <fragment
+        android:id="@+id/wineList"
+        android:name="com.barryalan.winetraining.wineList.WineList"
+        android:label="fragment_wine_list"
+        tools:layout="@layout/fragment_wine_list" />
+</navigation>

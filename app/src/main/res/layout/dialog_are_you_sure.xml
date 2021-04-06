@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_button_navigation"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:paddingBottom="32dp">
+
+    <TextView
+        android:id="@+id/tv_are_you_sure_dialog_question"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal"
+        android:text="@string/DialogAreYouSure_tv_are_you_sure"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:paddingBottom="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/background_button_navigation"
+        android:padding="0dp"
+        android:text="@string/DialogAreYouSure_btn_cancel"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_are_you_sure_dialog_question" />
+
+
+    <Button
+        android:id="@+id/btn_yes"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/background_button_navigation"
+        android:padding="0dp"
+        android:text="@string/DialogAreYouSure_btn_yes"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_are_you_sure_dialog_question" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

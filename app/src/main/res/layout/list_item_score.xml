@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_item_wine"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="8dp"
+    app:cardCornerRadius="25dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_button_navigation"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_player_name_text_item_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/ListItemWine_tv_name"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/score_text_item_score"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_player_name_item_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_alignBaseline="@id/tv_player_name_text_item_score"
+            android:layout_toEndOf="@+id/tv_player_name_text_item_score"
+            app:layout_constraintEnd_toEndOf="@+id/tv_player_name_text_item_score"
+            app:layout_constraintStart_toStartOf="@+id/tv_player_name_text_item_score"
+            app:layout_constraintTop_toBottomOf="@+id/tv_player_name_text_item_score" />
+
+        <TextView
+            android:id="@+id/score_text_item_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_category_item_score"
+            android:layout_alignParentEnd="true"
+            android:text="@string/Play_tv_score"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_player_name_text_item_score"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_score_item_score"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/score_text_item_score"
+            android:layout_toEndOf="@+id/score_text_item_score"
+            app:layout_constraintEnd_toEndOf="@+id/score_text_item_score"
+            app:layout_constraintStart_toStartOf="@+id/score_text_item_score"
+            app:layout_constraintTop_toBottomOf="@+id/score_text_item_score" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
