@@ -13,8 +13,8 @@
     <color name="red">#F14C6A</color>
     <color name="orange">#eb8f49 </color>
     <color name="yellow">#e5ed4a </color>
-    <color name="gold">#80FAE41C</color>
-    <color name="silver">#CBCBCB</color>
-    <color name="bronze">#FCA8A8</color>
+    <color name="gold">#C9B037</color>
+    <color name="silver">#D7D7D7</color>
+    <color name="bronze">#AD8A56</color>
     <color name="blue">#34b1eb</color>
 </resources>

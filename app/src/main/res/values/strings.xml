@@ -63,4 +63,10 @@
     <string name="PlayActivity_tv_ending_game">Are you sure you want to quit the current game?</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ScoreTimeStamp">Date:</string>
+    <string name="Names">Names</string>
+    <string name="Categories">Categories</string>
+    <string name="Prices">Prices</string>
+    <string name="All">All</string>
+    <string name="Error">ERROR</string>
 </resources>
