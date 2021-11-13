@@ -1,16 +1,11 @@
 package com.barryalan.winetraining.data
 
 import android.app.Application
-import androidx.lifecycle.viewModelScope
-import com.barryalan.winetraining.model.Score
-import com.barryalan.winetraining.ui.shared.AppDatabase
+import com.barryalan.winetraining.model.menu.Score
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 
 class ScoresRepository(application: Application) {
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="180dp"
+    android:id="@+id/cv_item_table_type"
+    app:cardCornerRadius="8dp"
+    android:padding="4dp"
+    android:layout_margin="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lyt_item_table_type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.barryalan.winetraining.customViews.TableView
+            android:id="@+id/table_item_table_type"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description_item_table_type" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textView2_item_table_type"
+            style="@style/Title4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Description:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_dimensions_item_table_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView2_item_table_type"
+            app:layout_constraintStart_toStartOf="@+id/textView2_item_table_type"
+            app:layout_constraintTop_toBottomOf="@+id/textView2_item_table_type" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_description_item_table_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/textView2_item_table_type"
+            app:layout_constraintStart_toStartOf="@+id/textView2_item_table_type"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dimensions_item_table_type" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:grid="http://schemas.android.com/apk/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_categories"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView2_menu_item_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:text="@string/Play_tv_what_do_you_want_to_study"
+        android:textAlignment="center"
+        android:textSize="40sp" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2_menu_item_detail">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            style="@style/Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recipe Ingredients"
+            grid:layout_column="0" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            style="@style/Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recipe Ingredient's amount"
+            grid:layout_column="0" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            style="@style/Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recipe Instructions"
+            grid:layout_column="0" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            style="@style/Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Prices"
+            grid:layout_column="0" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            style="@style/Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drink Prices"
+            grid:layout_column="0" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            style="@style/Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Menu Items"
+            grid:layout_column="0" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            style="@style/Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drink Menu Items"
+            grid:layout_column="0" />
+
+
+    </LinearLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/linearLayout2"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginHorizontal="32dp"-->
+    <!--        android:layout_marginVertical="16dp"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        <com.google.android.material.textview.MaterialTextView-->
+    <!--            android:id="@+id/textView2"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintHorizontal_bias="0.0"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_marginBottom="16dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="@string/Play_tv_what_do_you_want_to_study"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textSize="40sp" />-->
+
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:id="@+id/btn_play_categories"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_marginBottom="8dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="@string/Play_btn_categories"-->
+    <!--            android:textSize="30sp" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/btn_play_prices"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_marginBottom="8dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="@string/Play_btn_prices"-->
+    <!--            android:textSize="30sp" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/btn_play_all"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="@string/Play_btn_all"-->
+    <!--            android:textSize="30sp" />-->
+    <!--    </LinearLayout>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

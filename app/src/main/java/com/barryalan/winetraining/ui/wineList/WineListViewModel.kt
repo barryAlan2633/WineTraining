@@ -4,11 +4,9 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.barryalan.winetraining.model.Wine
-import com.barryalan.winetraining.ui.shared.AppDatabase
+import com.barryalan.winetraining.model.menu.Wine
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class WineListViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -23,26 +21,26 @@ class WineListViewModel(application: Application) : AndroidViewModel(application
     }
 
     fun saveWine(wine: Wine) {
-        viewModelScope.launch(Dispatchers.IO) {
-            AppDatabase(getApplication()).appDao().insertReplace(wine)
-        }
+//        viewModelScope.launch(Dispatchers.IO) {
+//            AppDatabase(getApplication()).drinkDao().insertReplace(wine)
+//        }
         getWines()
     }
 
     fun deleteWine(wine: Wine) {
-        viewModelScope.launch(Dispatchers.IO) {
-            AppDatabase(getApplication()).appDao().delete(wine)
-        }
+//        viewModelScope.launch(Dispatchers.IO) {
+//            AppDatabase(getApplication()).drinkDao().delete(wine)
+//        }
         getWines()
     }
 
     fun getWines() {
         viewModelScope.launch(Dispatchers.IO) {
-            val wines = AppDatabase(getApplication()).appDao().getAllWines()
-
-            withContext(Dispatchers.Main) {
-                winesLiveData.value = wines
-            }
+//            val wines = AppDatabase(getApplication()).drinkDao().getAllWines()
+//
+//            withContext(Dispatchers.Main) {
+//                winesLiveData.value = wines
+//            }
         }
     }
 
@@ -119,7 +117,7 @@ class WineListViewModel(application: Application) : AndroidViewModel(application
             allWines.add(Wine("Silver Oak", "Cabernet Sauvignon", 0F, 143F))
             allWines.add(Wine("Caymus", "Cabernet Sauvignon", 0F, 165F))
 
-            AppDatabase(getApplication()).appDao().insertReplace(*allWines.toTypedArray())
+//            AppDatabase(getApplication()).drinkDao().insertReplace(*allWines.toTypedArray())
         }
     }
 

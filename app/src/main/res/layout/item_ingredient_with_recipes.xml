@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="120dp"
+    android:layout_height="180dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ab_delete_item_ingredient_with_recipes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/delete_ingredient"
+            android:src="@drawable/ic_delete_forever_black_24dp"
+            android:visibility="invisible"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="@+id/img_item_ingredient_with_recipes"
+            app:layout_constraintTop_toTopOf="@+id/img_item_ingredient_with_recipes"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/img_item_ingredient_with_recipes"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:contentDescription="@string/ingredient_image"
+            android:src="@drawable/ic_error_outline_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_name_item_ingredient_with_recipes"
+            style="@style/Title4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_item_ingredient_with_recipes"
+            tools:text="Milk" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textView5_item_ingredient_with_recipes"
+            style="@style/Text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/used_in"
+            android:layout_marginEnd="2dp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_amount_of_recipes_item_ingredient_with_recipes"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_item_ingredient_with_recipes" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_amount_of_recipes_item_ingredient_with_recipes"
+            style="@style/Text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/textView5_item_ingredient_with_recipes"
+            app:layout_constraintEnd_toStartOf="@+id/textView6_item_ingredient_with_recipes"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView5_item_ingredient_with_recipes"
+            app:layout_constraintTop_toTopOf="@+id/textView5_item_ingredient_with_recipes"
+            tools:text="5" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textView6_item_ingredient_with_recipes"
+            style="@style/Text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@string/recipe_s"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_amount_of_recipes_item_ingredient_with_recipes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_amount_of_recipes_item_ingredient_with_recipes"
+            app:layout_constraintTop_toTopOf="@+id/tv_amount_of_recipes_item_ingredient_with_recipes" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Text4"
+            android:id="@+id/tv_calories_item_ingredient_with_recipes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_amount_of_recipes_item_ingredient_with_recipes"
+            tools:text="50 calories" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

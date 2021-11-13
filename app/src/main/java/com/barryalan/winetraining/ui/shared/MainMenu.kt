@@ -1,25 +1,27 @@
 package com.barryalan.winetraining.ui.shared
 
-import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.Button
-import android.widget.TextView
-import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.Fragment
+import androidx.activity.addCallback
 import androidx.navigation.findNavController
 import com.barryalan.winetraining.R
+import com.barryalan.winetraining.ui.shared.util.AreYouSureCallBack
+import com.barryalan.winetraining.ui.shared.util.UIMessage
+import com.barryalan.winetraining.ui.shared.util.UIMessageType
+import com.google.android.material.button.MaterialButton
 
 
-class MainMenu : Fragment() {
+class MainMenu : BaseFragment() {
 
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            exitAppDialog()
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,64 +33,47 @@ class MainMenu : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnPlay = requireView().findViewById<Button>(R.id.btn_play)
-        val btnHighScores = requireView().findViewById<Button>(R.id.btn_high_scores)
-        val btnWineList = requireView().findViewById<Button>(R.id.btn_wine)
-        val btnQuestionList = requireView().findViewById<Button>(R.id.btn_questions)
+        val btnMenus = requireView().findViewById<MaterialButton>(R.id.btn_menus_main_menu)
+        val btnTraining = requireView().findViewById<MaterialButton>(R.id.btn_training_main_menu)
+        val btnManager = requireView().findViewById<MaterialButton>(R.id.btn_manager_main_menu)
+        val btnHostess = requireView().findViewById<MaterialButton>(R.id.btn_hostess_main_menu)
 
 
-        btnPlay.setOnClickListener {
-            view.findNavController().navigate(R.id.action_mainMenu_to_play)
-        }
-
-        btnHighScores.setOnClickListener {
-            view.findNavController().navigate(R.id.action_mainMenu_to_highScores)
-        }
-
-        btnWineList.setOnClickListener {
-            view.findNavController().navigate(R.id.action_mainMenu_to_wineList)
-        }
-
-        btnQuestionList.setOnClickListener {
-            view.findNavController().navigate(R.id.action_mainMenu_to_questionList)
-        }
-
-        btnPlay.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.anim_btn_play)
+//        btnMenus.setOnClickListener {
+//            requireView().findNavController().navigate(R.id.action_mainMenu_to_menuMainMenu)
+//        }
+//
+//
+//        btnTraining.setOnClickListener {
+//            requireView().findNavController().navigate(R.id.action_mainMenu_to_trainingMainMenu)
+//        }
+//
+//        btnManager.setOnClickListener {
+//            requireView().findNavController().navigate(R.id.action_mainMenu_to_managerMainMenu)
+//        }
+//
+//        btnHostess.setOnClickListener {
+//            requireView().findNavController().navigate(R.id.action_mainMenu_to_hostessMainMenu)
+//        }
 
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                exitDialog()
+    private fun exitAppDialog() {
+        val callback: AreYouSureCallBack = object :
+            AreYouSureCallBack {
+            override fun proceed() {
+                requireActivity().finish()
             }
+
+            override fun cancel() {}
         }
-        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
-    }
 
-    //Dialogs
-    private fun exitDialog() {
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setCancelable(false)
-        val dialogView: View = layoutInflater.inflate(R.layout.dialog_are_you_sure, null)
-        builder.setView(dialogView)
-        val alertDialog = builder.create()
-        alertDialog.show()
-        alertDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        val tvQuestion = alertDialog.findViewById<TextView>(R.id.tv_are_you_sure_dialog_question)
-        val btnYes = alertDialog.findViewById<Button>(R.id.btn_yes)
-        val btnCancel = alertDialog.findViewById<Button>(R.id.btn_cancel)
-        tvQuestion!!.text = resources.getString(R.string.MainActivity_tv_closing_app)
+        uiCommunicationListener.onUIMessageReceived(
+            UIMessage(
+                "Are you sure you want to exit the app? Don't be afraid of success!",
+                UIMessageType.AreYouSureDialog(callback)
+            )
+        )
 
-        btnYes!!.setOnClickListener {
-
-            alertDialog.dismiss()
-            requireActivity().finish()
-
-        }
-        btnCancel!!.setOnClickListener {
-            alertDialog.dismiss()
-        }
     }
 }

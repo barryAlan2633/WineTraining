@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.barryalan.winetraining.R
-import com.barryalan.winetraining.model.Wine
+import com.barryalan.winetraining.model.menu.Wine
 import com.barryalan.winetraining.ui.shared.OnItemClickListener
 import java.util.*
 import kotlin.collections.ArrayList

@@ -69,4 +69,88 @@
     <string name="Prices">Prices</string>
     <string name="All">All</string>
     <string name="Error">ERROR</string>
+    <string name="Drinks">Drinks</string>
+    <string name="Recipes">Recipes</string>
+    <string name="MenuItems">Menu Items</string>
+    <string name="RecipeImage">Recipe Image</string>
+
+
+    <string name="dialog_title_success">Success</string>
+    <string name="dialog_button_positive">OK</string>
+    <string name="dialog_title_error">Error</string>
+    <string name="dialog_title_info">Info</string>
+    <string name="dialog_title_are_you_sure">Are you sure?</string>
+    <string name="dialog_title_are_you_sure_delete">Are you sure you want to delete this? This cannot be un-done.</string>
+    <string name="dialog_button_negative">Cancel</string>
+    <string name="delete_recipe">Delete recipe</string>
+    <string name="edit_recipe">Edit Recipe</string>
+    <string name="ingredient_image">Ingredient Image</string>
+    <string name="recipe_image">Recipe Image</string>
+    <string name="save">save</string>
+    <string name="cancel">cancel</string>
+    <string name="ingredients">Ingredients:</string>
+    <string name="add_ingredient">Add Ingredient</string>
+    <string name="amount">Amount</string>
+    <string name="name">Name</string>
+    <string name="or_create_a_new_item">Or create a new item:</string>
+    <string name="select_from_your_ingredient_list">Select from your ingredient list:</string>
+    <string name="new_ingredient">New Ingredient</string>
+    <string name="recipe_name">Recipe name</string>
+    <string name="recipe_type">Recipe type:</string>
+    <string name="ingredients2">ingredients</string>
+    <string name="error">Error</string>
+    <string name="delete_ingredient">delete ingredient</string>
+    <string name="select_from_your_recipe_list">Select from your recipe list:</string>
+    <string name="add_recipes">Add Recipes</string>
+    <string name="add_recipe">add recipe</string>
+    <string name="recipes">Recipes:</string>
+    <string name="meal_item_type">Meal Item Type:</string>
+    <string name="meal_item_name">Meal item name</string>
+    <string name="instructions">Instructions:</string>
+    <string name="menu_item_name">Menu item name</string>
+    <string name="menu_item_type">Menu item type</string>
+    <string name="menus">Menus</string>
+    <string name="menu_name">Menu name</string>
+    <string name="menu_type">Menu type</string>
+    <string name="menu_items">Menu items:</string>
+    <string name="add_menu_items">Add menu items</string>
+    <string name="select_from_your_menu_item_list">Select from your menu item list</string>
+    <string name="add_menu_item">Add menu item</string>
+    <string name="menu_item_image">Menu item image</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="used_in">Used In</string>
+    <string name="recipe_s">recipe(s)</string>
+    <string name="price">Price</string>
+    <string name="select_menu_items">Select menu items</string>
+    <string name="delete_menu_item">Delete Menu Item</string>
+    <string name="select_recipes">Select Recipes</string>
+    <string name="select_ingredients">Select Ingredients</string>
+    <string name="close">Close</string>
+    <string name="ingredient_calories_needed">Some ingredients need their calories assigned</string>
+    <string name="advanced_search_options">Advanced Search Options</string>
+    <string name="apply">Apply</string>
+
+    <string-array name="units">
+        <item>Unit</item>
+        <item>Dash</item>
+        <item>Pinch</item>
+        <item>Tea Spoon</item>
+        <item>Table Spoon</item>
+        <item>Ounce</item>
+        <item>Pound</item>
+        <item>Cup</item>
+        <item>Pint</item>
+        <item>Liter</item>
+        <item>Milliliter</item>
+        <item>Quart</item>
+        <item>Gallon</item>
+    </string-array>
+
+    <string name="dialog_title_new_employee">"New Employee"</string>
+    <string name="table_menu">New Table type</string>
+    <string name="clorse">Close</string>
+    <string name="section_color_menu">Section Color Menu</string>
+    <string name="summon">summon</string>
+
+
 </resources>

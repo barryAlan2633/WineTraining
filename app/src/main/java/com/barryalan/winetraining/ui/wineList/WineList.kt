@@ -7,18 +7,18 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.cardview.widget.CardView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.barryalan.winetraining.R
-import com.barryalan.winetraining.model.Wine
+import com.barryalan.winetraining.model.menu.Wine
+import com.barryalan.winetraining.ui.shared.BaseFragment
 import com.barryalan.winetraining.ui.shared.OnItemClickListener
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class WineList : Fragment(), OnItemClickListener {
+class WineList : BaseFragment(), OnItemClickListener {
 
     private lateinit var viewModel: WineListViewModel
     private lateinit var wineAdapter: WineAdapter

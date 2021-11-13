@@ -3,46 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainMenu">
+    app:startDestination="@id/login">
+
 
     <fragment
-        android:id="@+id/mainMenu"
-        android:name="com.barryalan.winetraining.ui.shared.MainMenu"
-        android:label="MainMenu"
-        tools:layout="@layout/fragment_main_menu" >
-        <action
-            android:id="@+id/action_mainMenu_to_highScores"
-            app:destination="@id/highScores" />
-        <action
-            android:id="@+id/action_mainMenu_to_play"
-            app:destination="@id/play" />
-        <action
-            android:id="@+id/action_mainMenu_to_wineList"
-            app:destination="@id/wineList" />
-        <action
-            android:id="@+id/action_mainMenu_to_questionList"
-            app:destination="@id/questionList" />
-    </fragment>
-    <fragment
         android:id="@+id/highScores"
-        android:name="com.barryalan.winetraining.ui.highscores.HighScores"
+        android:name="com.barryalan.winetraining.ui.training.highscores.HighScores"
         android:label="fragment_high_scores"
         tools:layout="@layout/fragment_high_scores" />
     <fragment
         android:id="@+id/play"
-        android:name="com.barryalan.winetraining.ui.play.Play"
+        android:name="com.barryalan.winetraining.ui.training.play.Play"
         android:label="fragment_play"
-        tools:layout="@layout/fragment_play" >
-        <action
-            android:id="@+id/action_play_to_mainMenu"
-            app:destination="@id/mainMenu" />
+        tools:layout="@layout/fragment_play">
         <action
             android:id="@+id/action_play_self"
             app:destination="@id/play" />
+        <action
+            android:id="@+id/action_play_to_playMenu"
+            app:destination="@id/playMenu" />
     </fragment>
     <fragment
         android:id="@+id/questionList"
-        android:name="com.barryalan.winetraining.ui.questionList.QuestionList"
+        android:name="com.barryalan.winetraining.ui.training.questionList.QuestionList"
         android:label="fragment_question_list"
         tools:layout="@layout/fragment_question_list" />
     <fragment
@@ -50,4 +33,364 @@
         android:name="com.barryalan.winetraining.ui.wineList.WineList"
         android:label="fragment_wine_list"
         tools:layout="@layout/fragment_wine_list" />
+    <fragment
+        android:id="@+id/recipeNewEdit"
+        android:name="com.barryalan.winetraining.ui.menu.recipes.RecipeNewEdit"
+        android:label="RecipeNewEdit"
+        tools:layout="@layout/fragment_recipe_new_edit">
+        <action
+            android:id="@+id/action_recipeNewEdit_to_recipeList"
+            app:destination="@id/recipeList"
+            app:popUpTo="@id/recipeList"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="recipeUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_recipeNewEdit_to_recipeDetail"
+            app:destination="@id/recipeDetail"
+            app:popUpTo="@id/recipeDetail"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeList"
+        android:name="com.barryalan.winetraining.ui.menu.recipes.RecipeList"
+        android:label="RecipeList"
+        tools:layout="@layout/fragment_recipe_list">
+        <action
+            android:id="@+id/action_recipeList_to_recipeNewEdit"
+            app:destination="@id/recipeNewEdit" />
+        <action
+            android:id="@+id/action_recipeList_to_recipeDetail"
+            app:destination="@id/recipeDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetail"
+        android:name="com.barryalan.winetraining.ui.menu.recipes.RecipeDetail"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail">
+        <action
+            android:id="@+id/action_recipeDetail_to_recipeList"
+            app:destination="@id/recipeList"
+            app:popUpTo="@id/recipeList"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_recipeDetail_to_recipeNewEdit"
+            app:destination="@id/recipeNewEdit" />
+
+        <argument
+            android:name="recipeUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredientListFragment"
+        android:name="com.barryalan.winetraining.ui.menu.ingredients.IngredientList"
+        android:label="IngredientListFragment"
+        tools:layout="@layout/fragment_ingredient_list">
+        <action
+            android:id="@+id/action_ingredientListFragment_to_ingredientDetailFragment"
+            app:destination="@id/ingredientDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredientDetailFragment"
+        android:name="com.barryalan.winetraining.ui.menu.ingredients.IngredientDetail"
+        android:label="IngredientDetailFragment"
+        tools:layout="@layout/fragment_ingredient_detail">
+        <action
+            android:id="@+id/action_ingredientDetailFragment_to_ingredientListFragment"
+            app:destination="@id/ingredientListFragment"
+            app:popUpTo="@id/ingredientListFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="ingredientUID"
+            android:defaultValue="1L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuItemsList"
+        android:name="com.barryalan.winetraining.ui.menu.menuItems.MenuItemsList"
+        android:label="MenuItemsList"
+        tools:layout="@layout/fragment_menu_items_list">
+        <action
+            android:id="@+id/action_menuItemsList_to_menuItemNewEdit"
+            app:destination="@id/menuItemNewEdit" />
+        <action
+            android:id="@+id/action_menuItemsList_to_menuItemDetail"
+            app:destination="@id/menuItemDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuItemNewEdit"
+        android:name="com.barryalan.winetraining.ui.menu.menuItems.MenuItemNewEdit"
+        android:label="fragment_menu_item_new_edit"
+        tools:layout="@layout/fragment_menu_item_new_edit">
+        <action
+            android:id="@+id/action_menuItemNewEdit_to_menuItemsList"
+            app:destination="@id/menuItemsList"
+            app:popUpTo="@id/menuItemsList"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="menuItemUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_menuItemNewEdit_to_menuItemDetail"
+            app:destination="@id/menuItemDetail"
+            app:popUpTo="@id/menuItemDetail"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuItemDetail"
+        android:name="com.barryalan.winetraining.ui.menu.menuItems.MenuItemDetail"
+        android:label="fragment_menu_item_detail"
+        tools:layout="@layout/fragment_menu_item_detail">
+        <action
+            android:id="@+id/action_menuItemDetail_to_menuItemNewEdit"
+            app:destination="@id/menuItemNewEdit" />
+
+        <argument
+            android:name="menuItemUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_menuItemDetail_to_menuItemsList"
+            app:destination="@id/menuItemsList"
+            app:popUpTo="@id/menuItemsList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuList"
+        android:name="com.barryalan.winetraining.ui.menu.menu.MenuList"
+        android:label="MenuList"
+        tools:layout="@layout/fragment_menu_list">
+        <action
+            android:id="@+id/action_menuList_to_menuNewEdit"
+            app:destination="@id/menuNewEdit" />
+        <action
+            android:id="@+id/action_menuList_to_menuDetail"
+            app:destination="@id/menuDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuNewEdit"
+        android:name="com.barryalan.winetraining.ui.menu.menu.MenuNewEdit"
+        android:label="MenuNewEdit"
+        tools:layout="@layout/fragment_menu_new_edit">
+        <action
+            android:id="@+id/action_menuNewEdit_to_menuList"
+            app:destination="@id/menuList"
+            app:popUpTo="@id/menuList"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="menuUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_menuNewEdit_to_menuDetail"
+            app:destination="@id/menuDetail"
+            app:popUpTo="@id/menuDetail"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuDetail"
+        android:name="com.barryalan.winetraining.ui.menu.menu.MenuDetail"
+        android:label="MenuDetail"
+        tools:layout="@layout/fragment_menu_detail">
+        <action
+            android:id="@+id/action_menuDetail_to_menuList"
+            app:destination="@id/menuList"
+            app:popUpTo="@id/menuList"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_menuDetail_to_menuNewEdit"
+            app:destination="@id/menuNewEdit" />
+
+        <argument
+            android:name="menuUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuMainMenu"
+        android:name="com.barryalan.winetraining.ui.menu.MenuMainMenu"
+        android:label="MenuMainMenu"
+        tools:layout="@layout/fragment_menu_main_menu">
+        <action
+            android:id="@+id/action_menuMainMenu_to_ingredientListFragment"
+            app:destination="@id/ingredientListFragment" />
+        <action
+            android:id="@+id/action_menuMainMenu_to_recipeList"
+            app:destination="@id/recipeList" />
+        <action
+            android:id="@+id/action_menuMainMenu_to_menuItemsList"
+            app:destination="@id/menuItemsList" />
+        <action
+            android:id="@+id/action_menuMainMenu_to_menuList"
+            app:destination="@id/menuList" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingMainMenu"
+        android:name="com.barryalan.winetraining.ui.training.TrainingMainMenu"
+        android:label="TrainingMainMenu"
+        tools:layout="@layout/fragment_training_main_menu">
+        <action
+            android:id="@+id/action_trainingMainMenu_to_highScores"
+            app:destination="@id/highScores" />
+        <action
+            android:id="@+id/action_trainingMainMenu_to_questionList"
+            app:destination="@id/questionList" />
+        <action
+            android:id="@+id/action_trainingMainMenu_to_playMenu"
+            app:destination="@id/playMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/playMenu"
+        android:name="com.barryalan.winetraining.ui.training.play.PlayMenu"
+        android:label="PlayMenu"
+        tools:layout="@layout/fragment_play_menu">
+        <action
+            android:id="@+id/action_playMenu_to_play"
+            app:destination="@id/play" />
+    </fragment>
+    <fragment
+        android:id="@+id/managerMainMenu"
+        android:name="com.barryalan.winetraining.ui.manager.ManagerMainMenu"
+        android:label="ManagerMainMenu"
+        tools:layout="@layout/fragment_manager_main_menu">
+        <action
+            android:id="@+id/action_managerMainMenu_to_managerEmployee"
+            app:destination="@id/managerEmployee" />
+        <action
+            android:id="@+id/action_managerMainMenu_to_managerFloorDesigner"
+            app:destination="@id/managerFloorList" />
+        <action
+            android:id="@+id/action_managerMainMenu_to_menuMainMenu"
+            app:destination="@id/menuMainMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/managerEmployee"
+        android:name="com.barryalan.winetraining.ui.manager.employee.ManagerEmployee"
+        android:label="ManagerEmployee"
+        tools:layout="@layout/fragment_manager_employee" />
+    <fragment
+        android:id="@+id/managerFloorList"
+        android:name="com.barryalan.winetraining.ui.manager.floor.ManagerFloorList"
+        android:label="fragment_manager_floor_list"
+        tools:layout="@layout/fragment_manager_floor_list">
+        <action
+            android:id="@+id/action_managerFloorList_to_managerFloorNew"
+            app:destination="@id/managerFloorNew" />
+        <action
+            android:id="@+id/action_managerFloorList_to_managerFloorArrangeTables"
+            app:destination="@id/managerFloorArrangeTables" />
+        <action
+            android:id="@+id/action_managerFloorList_to_managerSectionEditor"
+            app:destination="@id/managerSectionEditor" />
+    </fragment>
+    <fragment
+        android:id="@+id/managerFloorNew"
+        android:name="com.barryalan.winetraining.ui.manager.floor.ManagerFloorNewEdit"
+        android:label="fragment_manager_floor_new"
+        tools:layout="@layout/fragment_manager_floor_new_edit">
+
+
+        <argument
+            android:name="floorUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/managerFloorArrangeTables"
+        android:name="com.barryalan.winetraining.ui.manager.floor.ManagerFloorArrangeTables"
+        android:label="ManagerFloorArrangeTables"
+        tools:layout="@layout/fragment_manager_floor_arrange_tables">
+
+
+        <argument
+            android:name="floorUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/managerSectionEditor"
+        android:name="com.barryalan.winetraining.ui.manager.floor.ManagerSectionEditor"
+        android:label="fragment_manager_section_editor"
+        tools:layout="@layout/fragment_manager_section_editor">
+
+
+        <argument
+            android:name="floorUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostessSectionAssigner"
+        android:name="com.barryalan.winetraining.ui.hostess.section.HostessSectionAssigner"
+        android:label="HostessSectionAssigner"
+        tools:layout="@layout/fragment_hostess_section_assigner" />
+    <fragment
+        android:id="@+id/hostessMain"
+        android:name="com.barryalan.winetraining.ui.hostess.main.HostessMain"
+        android:label="HostessMainFragment"
+        tools:layout="@layout/fragment_hostess_main" />
+    <fragment
+        android:id="@+id/hostessMainMenu"
+        android:name="com.barryalan.winetraining.ui.hostess.main.HostessMainMenu"
+        android:label="fragment_hostess_main_menu"
+        tools:layout="@layout/fragment_hostess_main_menu">
+        <action
+            android:id="@+id/action_hostessMainMenu_to_hostessSectionAssigner"
+            app:destination="@id/hostessSectionAssigner" />
+        <action
+            android:id="@+id/action_hostessMainMenu_to_hostessMain"
+            app:destination="@id/hostessMain" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.barryalan.winetraining.ui.shared.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_menuMainMenu"
+            app:destination="@id/menuMainMenu" />
+        <action
+            android:id="@+id/action_login_to_trainingMainMenu"
+            app:destination="@id/trainingMainMenu" />
+        <action
+            android:id="@+id/action_login_to_managerMainMenu"
+            app:destination="@id/managerMainMenu" />
+        <action
+            android:id="@+id/action_login_to_hostessMainMenu"
+            app:destination="@id/hostessMainMenu" />
+        <action
+            android:id="@+id/action_login_to_serverMainMenu"
+            app:destination="@id/serverMainMenu" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/serverMainMenu"
+        android:name="com.barryalan.winetraining.ui.server.ServerMainMenu"
+        android:label="ServerMainMenu"
+        tools:layout="@layout/fragment_server_main_menu">
+        <action
+            android:id="@+id/action_serverMainMenu_to_serverMain"
+            app:destination="@id/serverMain" />
+        <argument
+            android:name="serverUID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/serverMain"
+        android:name="com.barryalan.winetraining.ui.server.ServerMain"
+        android:label="ServerMain"
+        tools:layout="@layout/fragment_server_main">
+        <argument
+            android:name="serverUID"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
 </navigation>

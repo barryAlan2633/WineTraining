@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.shared.MainActivity">
+
+    <SeekBar
+        android:id="@+id/sb_zoom_manager_section_editor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="30"
+        app:layout_constraintEnd_toStartOf="@+id/lin_lyt_manager_floor_section_editor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/con_lyt_floor_manager_floor_section_editor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lin_lyt_manager_floor_section_editor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_zoom_manager_section_editor" />
+
+    <LinearLayout
+        android:id="@+id/lin_lyt_manager_floor_section_editor"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/colorSecondaryVariant"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn_section_color_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Number of sections:"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/sp_floorPlan_hostess_main"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@color/white">
+
+            <Spinner
+                android:id="@+id/sp_number_of_sections_manager_floor_section_editor"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_sections_manager_floor_section_editor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_section_color_menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Choose section colors"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/con_lyt_floor_manager_floor_section_editor" />
+</androidx.constraintlayout.widget.ConstraintLayout>

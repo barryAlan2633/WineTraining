@@ -8,7 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="appBackground">#804DFFDF</color>
+
+    <color name="colorPrimary">#f3e7ff</color>
+    <color name="colorPrimaryVariant">#977EB1</color>
+    <color name="colorOnPrimary">@color/black</color>
+    <!-- Secondary brand color. -->
+    <color name="colorSecondary">#51455E</color>
+    <color name="colorSecondaryVariant">#977EB1</color>
+
+    <color name="appBackground">#F8F0F8</color>
     <color name="green">#97FF95</color>
     <color name="red">#F14C6A</color>
     <color name="orange">#eb8f49 </color>
@@ -17,4 +25,12 @@
     <color name="silver">#D7D7D7</color>
     <color name="bronze">#AD8A56</color>
     <color name="blue">#34b1eb</color>
+    <color name="gray">#F8F0F8</color>
+    <color name="transparent">#FFF</color>
+
+
+    <color name="text_title">#FF000000</color>
+    <color name="text_subtitle">#FF000000</color>
+    <color name="text">#FF000000</color>
+
 </resources>

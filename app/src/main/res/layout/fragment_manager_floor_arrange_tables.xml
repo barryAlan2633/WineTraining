@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SeekBar
+        android:id="@+id/sb_zoom_manager_floor_arrange_tables"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/original_coordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="0,0"
+        app:layout_constraintStart_toStartOf="@+id/con_lyt_floor_manager_floor_arrange_tables"
+        app:layout_constraintTop_toBottomOf="@+id/sb_zoom_manager_floor_arrange_tables" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/moving_coordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="0,0"
+        app:layout_constraintStart_toStartOf="@+id/con_lyt_floor_manager_floor_arrange_tables"
+        app:layout_constraintTop_toBottomOf="@+id/original_coordinates" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/saving_coordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="0,0"
+        app:layout_constraintStart_toStartOf="@+id/con_lyt_floor_manager_floor_arrange_tables"
+        app:layout_constraintTop_toBottomOf="@+id/moving_coordinates" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btn_menu_manager_floor_arrange_tables"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Menu"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/con_lyt_floor_manager_floor_arrange_tables"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/lin_lyt_bottom_menu_manager_floor_arrange_tables"
+        app:layout_constraintEnd_toStartOf="@+id/lin_lyt_selected_tables_manager_floor_arrange_tables"
+        app:layout_constraintStart_toEndOf="@+id/lin_lyt_table_type_manager_floor_arrange_tables"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lin_lyt_bottom_menu_manager_floor_arrange_tables"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSecondary"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lin_lyt_selected_tables_manager_floor_arrange_tables"
+        app:layout_constraintStart_toEndOf="@+id/lin_lyt_table_type_manager_floor_arrange_tables">
+
+        <ImageButton
+            android:id="@+id/btn_table_type_menu_manager_floor_arrange_tables"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/btn_move_selected_manager_floor_arrange_tables"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_baseline_not_move_24" />
+
+        <ImageButton
+            android:id="@+id/btn_select_manager_floor_arrange_tables"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_baseline_touch_app_24"
+            android:tag="R.drawable.ic_baseline_touch_app_24" />
+
+        <ImageButton
+            android:id="@+id/btn_duplicate_all_manager_floor_arrange_tables"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_baseline_duplicate" />
+
+        <ImageButton
+            android:id="@+id/btn_delete_selected_manager_floor_arrange_tables"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_delete_forever_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/btn_selected_tables_menu_manager_floor_arrange_tables"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_lyt_selected_tables_manager_floor_arrange_tables"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@color/colorSecondary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_selected_tables_manager_floor_arrange_tables"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_lyt_table_type_manager_floor_arrange_tables"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/colorSecondary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_table_types_manager_floor_arrange_tables"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
